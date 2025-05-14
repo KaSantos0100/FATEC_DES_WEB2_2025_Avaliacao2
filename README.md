@@ -23,17 +23,20 @@ Obs: Com verifição de login e senha
 
 # Estrutura de Pastas
 
-FATEC_DES_WEB2_2025_AVALIACAO2/
-└── code/
-└── classes/
-├── DB.php           # Classe de conexão com o banco de dados
-├── login.php        # Classe ou script de autenticação
-├── cadastro.php     # Lógica para cadastro de dados (usuários/produtos)
-├── home.php         # Página principal do sistema (após login)
-├── index.php        # Página de entrada do sistema
-├── login.php        # (Possivelmente duplicado, revisar necessidade)
-├── remover.php      # Script para remoção de registros
-└── vizualizar.php   # Página para visualização de registros
+| Caminho                           | Descrição                                         |
+| --------------------------------- | ------------------------------------------------- |
+| `FATEC_DES_WEB2_2025_AVALIACAO2/` | Raiz do projeto                                   |
+| └── `code/`                       | Diretório principal contendo o código-fonte       |
+|     └── `classes/`                | Pasta com as classes PHP                          |
+|         ├── `DB.php`              | Classe de conexão com o banco de dados            |
+|         ├── `login.php`           | Classe ou script de autenticação                  |
+|         ├── `cadastro.php`        | Lógica para cadastro de dados (usuários/produtos) |
+|         ├── `home.php`            | Página principal do sistema (após login)          |
+|         ├── `index.php`           | Página de entrada do sistema                      |
+|         ├── `login.php`           | **Possivelmente duplicado — revisar necessidade** |
+|         ├── `remover.php`         | Script para remoção de registros                  |
+|         └── `vizualizar.php`      | Página para visualização de registros             |
+
 
 
 ## Classe DB
