@@ -25,17 +25,42 @@ $produtos_artesanais = $db->getproduto_artesanais();
             padding: 0;
         }
 
-        header {
+         header {
             background-color: #6c63ff;
             color: white;
-            padding: 20px 0;
+            padding: 20px;
             text-align: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         main {
             padding: 40px;
             text-align: center;
+        }
+
+        table {
+            margin: 0 auto;
+            width: 90%;
+            max-width: 1000px;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #6c63ff;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
         }
 
         .btn-container {
@@ -63,10 +88,30 @@ $produtos_artesanais = $db->getproduto_artesanais();
             color: #777;
             font-size: 0.9em;
         }
+
+        @media (max-width: 600px) {
+            table, th, td {
+                font-size: 14px;
+            }
+
+            th, td {
+                padding: 10px;
+            }
+
+            a.button {
+                width: 100%;
+                box-sizing: border-box;
+            }
+        }
     </style>
 </head>
 
 <body>
+    
+    <header>
+        <h1>Vizualizar Produto</h1>
+    </header>
+
 
     <main>
         <table>
@@ -76,7 +121,6 @@ $produtos_artesanais = $db->getproduto_artesanais();
                 <th>Preço</th>
                 <th>Descrição</th>
                 <th>Categoria</th>
-
             </tr>
             <?php foreach ($produtos_artesanais as $produto_artesanal): ?>
                 <tr>
@@ -85,7 +129,6 @@ $produtos_artesanais = $db->getproduto_artesanais();
                     <td><?= number_format($produto_artesanal['preco'], 2, ',', '.') ?></td>
                     <td><?= htmlspecialchars($produto_artesanal['descricao']) ?></td>
                     <td><?= htmlspecialchars($produto_artesanal['categoria']) ?></td>
-
                 </tr>
             <?php endforeach; ?>
         </table>
@@ -99,6 +142,5 @@ $produtos_artesanais = $db->getproduto_artesanais();
 <footer>
     &copy; 2025 Lojinha Artesanal - Fatec Araras
 </footer>
-
 
 </html>
