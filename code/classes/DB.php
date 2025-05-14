@@ -2,12 +2,15 @@
 /*Classe responsável por gerenciar dados no MySQL via PDO.*/
 class DB
 {
+    //  Protected : Acesso permitido à própria classe e a suas subclasses (herança).
     protected $conexao;
     protected $host = "localhost";
     protected $dbname = "artesanato_db";
     protected $username = "root";
     protected $password = "";
     protected $pdo;
+
+    
 
     public function __construct()
     {
@@ -16,7 +19,6 @@ class DB
             $this->pdo = new PDO($dsn, $this->username, $this->password, [
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
             ]);
-            echo 'Bem vindo! Conexão bem-sucedida';
         } catch (PDOException $e) {
             die("Falha na conexão" . $e->getMessage());
         }
@@ -52,12 +54,14 @@ class DB
             $categoria
         ]);
     }
+
     public function selectProdutoPorId($id)
     {
         $stmt = $this->pdo->prepare("SELECT * FROM produtos_artesanais WHERE id = ?");
         $stmt->execute([$id]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+    //Função de  deletar
     public function deleteProduto($id)
     {
         $this->execute("DELETE FROM produtos_artesanais  WHERE id = ?", [$id]);

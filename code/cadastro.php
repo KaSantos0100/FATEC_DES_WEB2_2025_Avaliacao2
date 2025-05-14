@@ -29,54 +29,102 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
-    <title>Cadastro de Produto</title>
+    <title>Lojinha - Cadastro de Produtos</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background: #f4f4f4;
-            padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f2f5;
+            margin: 0;
+            padding: 0;
         }
 
-        .form-container {
-            background: #fff;
-            padding: 30px;
-            max-width: 400px;
-            margin: auto;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .form-container h2 {
+        header {
+            background-color: #6c63ff;
+            color: white;
+            padding: 30px 0;
             text-align: center;
-            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
-        input[type="text"],
-        input[type="number"],
-         .mensagem {
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            padding: 30px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        .btn-group {
+            text-align: center;
+        }
+
+        button, .btn-secondary {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s ease;
+            margin: 5px;
+        }
+
+        button {
+            background-color: #6c63ff;
+            color: white;
+        }
+
+        button:hover {
+            background-color: #4e47d4;
+        }
+
+        .btn-secondary {
+            background-color: #ddd;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .btn-secondary:hover {
+            background-color: #bbb;
+        }
+
+        .mensagem {
             text-align: center;
             color: green;
             font-weight: bold;
             margin-top: 20px;
         }
 
-        .button-link {
-            display: inline-block;
+        footer {
             text-align: center;
-            background-color: #4CAF50;
-            color: white;
-            padding: 12px;
-            width: 100%;
-            text-decoration: none;
-            border-radius: 4px;
-            font-size: 16px;
-        }
-
-        .button-link:hover {
-            background-color: #6c63ff;
+            margin-top: 40px;
+            padding: 20px 0;
+            color: #777;
+            font-size: 0.9em;
         }
     </style>
 </head>
@@ -101,8 +149,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <label for="categoria">Categoria</label>
             <input type="text" id="categoria" name="categoria" required>
 
-            <button type="submit">Cadastrar Produto</button>
-            <a href="home.php" class="button-link">Voltar</a>
+            <div class="btn-group">
+                <button type="submit"> Cadastrar</button>
+                <a href="home.php" class="btn-secondary">Voltar</a>
+            </div> 
+            
         </form>
     </div>
 

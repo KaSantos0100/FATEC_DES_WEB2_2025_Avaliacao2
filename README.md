@@ -23,22 +23,29 @@ Obs: Com verifição de login e senha
 
 # Estrutura de Pastas
 
-FATEC_DES_WEB2_2025_Avaliacao2/
-│
-├── code/
-│   ├── classes/
-│   │   ├── DB.php              # Classe de conexão com banco de dados
-│   │   └── login.php           # Provável classe com lógica de login
-│   │
-│   ├── cadastro.php            # Tela ou script de cadastro (produtos ou usuários)
-│   ├── home.php                # Página principal após login
-│   ├── index.php               # Ponto de entrada da aplicação
-│   ├── login.php               # Tela de login (separada da lógica que está em classes/login.php)
-│   ├── remover.php             # Script para deletar registros
-│   ├── vizualizar.php          # Página para exibir registros
-│   └── loja.sql                # Script SQL para criar estrutura do banco de dados
-│
-├── README.md 
+FATEC_DES_WEB2_2025_AVALIACAO2/
+└── code/
+└── classes/
+├── DB.php           # Classe de conexão com o banco de dados
+├── login.php        # Classe ou script de autenticação
+├── cadastro.php     # Lógica para cadastro de dados (usuários/produtos)
+├── home.php         # Página principal do sistema (após login)
+├── index.php        # Página de entrada do sistema
+├── login.php        # (Possivelmente duplicado, revisar necessidade)
+├── remover.php      # Script para remoção de registros
+└── vizualizar.php   # Página para visualização de registros
+
+
+## Classe DB
+
+Local: `classes/DB.php`
+
+- Conexão com o banco de dados é estabelecida no construtor.
+- Métodos públicos:
+  - `getproduto_artesanais()`
+  - `getcadastroProduto($nome_produto, $preco, $descrição, $categoria,)`
+  - `selectProdutoPorId($id)`
+  - `deleteProduto($id)`
 
 
 #  Para  realizar o teste 
@@ -48,12 +55,17 @@ FATEC_DES_WEB2_2025_Avaliacao2/
 | admin       | admin      |
 
 
+# Instruções para Rodar
 
-
+1. Clone ou baixe o repositório.
+2. Importe o arquivo `loja.sql` no seu banco de dados MySQL.
+3. Atualize as credenciais do banco na classe `DB.php` conforme necessário.
+4. Execute o projeto em um servidor PHP local (como `localhost` no XAMPP).
+5. Acesse `index.php` e utilize as credenciais de teste.
 
 
 # 📌 Orientação
-- Realizado para fins acadêmicos, nao  utilizar o prototipo do sistema em produção.
+- Realizado para fins acadêmicos;
 
 # Créditos
 
